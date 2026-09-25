@@ -1,0 +1,7 @@
+---
+title: "Homework 1"
+author: "Natasha Woon"
+date: "2026-09-25"
+output: github_document
+---
+
