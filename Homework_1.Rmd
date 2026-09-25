@@ -18,13 +18,6 @@ data("penguins", package = "palmerpenguins")
 ```
 
 ## Description of Penguins Data set 
-
-Write a short description of the penguins dataset (not the penguins_raw dataset) using inline R code. In your discussion, please include:
-
-the data in this dataset, including names / values of important variables
-the size of the dataset (using nrow and ncol)
-the mean flipper length
-
 The data in this dataset describes different species of penguins across different islands. The 
 
 This data set has `r nrow (penguins)` rows and `r ncol(penguins)` columns.
@@ -40,5 +33,20 @@ ggplot(data = penguins,
 ggsave("scatterplot.png")
 ```
 
+# Problem 2
+
+```{r}
+set.seed(123)
+
+problem2_df = 
+  tibble(
+    random_sample = rnorm(10),
+    logical_vector = (random_sample > 0),
+    character_vector = c("Dog", "Giraffe", "Hamster", "Frog", "Elephant", "Cat", "Moose", "Otter", "Lizard", "Kangaroo"), 
+    factor_vector = factor (c("Medium", "Large", "Small", "Small", "Large", "Medium", "Large", "Medium", "Small", "Large"))
+  )
+
+problem2_df
+```
 
 
