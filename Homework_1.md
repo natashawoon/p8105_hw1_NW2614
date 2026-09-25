@@ -79,3 +79,33 @@ problem2_df
     ##  8       -1.27   FALSE          Otter            Medium       
     ##  9       -0.687  FALSE          Lizard           Small        
     ## 10       -0.446  FALSE          Kangaroo         Large
+
+``` r
+mean(pull(problem2_df, random_sample))
+```
+
+    ## [1] 0.07462564
+
+``` r
+mean(pull(problem2_df, logical_vector))
+```
+
+    ## [1] 0.5
+
+``` r
+mean(pull(problem2_df, character_vector))
+```
+
+    ## Warning in mean.default(pull(problem2_df, character_vector)): argument is not
+    ## numeric or logical: returning NA
+
+    ## [1] NA
+
+``` r
+mean(pull(problem2_df, factor_vector))
+```
+
+    ## Warning in mean.default(pull(problem2_df, factor_vector)): argument is not
+    ## numeric or logical: returning NA
+
+    ## [1] NA

@@ -47,6 +47,16 @@ problem2_df =
   )
 
 problem2_df
+
+mean(pull(problem2_df, random_sample))
+
+mean(pull(problem2_df, logical_vector))
+
+mean(pull(problem2_df, character_vector))
+
+mean(pull(problem2_df, factor_vector))
+
 ```
+
 
 
