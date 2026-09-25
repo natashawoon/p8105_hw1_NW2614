@@ -5,6 +5,8 @@ date: "2026-09-25"
 output: github_document
 ---
 
+# Problem 1 
+
 ## Load Packages
 
 ```{r}
@@ -14,4 +16,29 @@ library(tidyverse)
 ```{r}
 data("penguins", package = "palmerpenguins")
 ```
+
+## Description of Penguins Data set 
+
+Write a short description of the penguins dataset (not the penguins_raw dataset) using inline R code. In your discussion, please include:
+
+the data in this dataset, including names / values of important variables
+the size of the dataset (using nrow and ncol)
+the mean flipper length
+
+The data in this dataset describes different species of penguins across different islands. The 
+
+This data set has `r nrow (penguins)` rows and `r ncol(penguins)` columns.
+
+The mean flipper length is `r mean(pull(penguins, flipper_length_mm), na.rm = TRUE)`mm.
+
+## Scatterplot 
+
+```{r warning = F}
+ggplot(data = penguins,
+       mapping = aes(bill_length_mm, flipper_length_mm, color = species)) + geom_point()
+
+ggsave("scatterplot.png")
+```
+
+
 
