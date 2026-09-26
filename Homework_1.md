@@ -28,12 +28,14 @@ data("penguins", package = "palmerpenguins")
 
 ## Description of Penguins Data set
 
-The data in this dataset describes different species of penguins across
-different islands. The
+The `penguins` data set contains data on penguins from three different
+species (Adelie, Chinstrap and Gentoo). Important variables include
+species, island, bill length, bill depth, flipper length, body mass,
+sex, and year.
 
-This data set has 344 rows and 8 columns.
+This data set has 344 observations and 8 columns.
 
-The mean flipper length is 200.9152047mm.
+The mean flipper length is 200.9152047 mm.
 
 ## Scatterplot
 
@@ -109,3 +111,32 @@ mean(pull(problem2_df, factor_vector))
     ## numeric or logical: returning NA
 
     ## [1] NA
+
+After taking the mean of each variable in the dataset, it is clear that
+the mean value can only be generated for numerical and logical vectors.
+Numerical variables can be averaged. Logical variables treat TRUE as 1
+and FALSE and 0, and can therefore produce and average. However,
+character and factor vectors produced a warning NA result, and were not
+able to generate a mean value when utilizing the mean() function. This
+makes sense because R cannot generate a mean of values such as `dog` and
+and `lizard`.
+
+``` r
+as.numeric(pull(problem2_df, logical_vector))
+as.numeric(pull(problem2_df, character_vector))
+```
+
+    ## Warning: NAs introduced by coercion
+
+``` r
+as.numeric(pull(problem2_df, factor_vector))
+```
+
+Applying the `as.numeric` function to the logical vector works since
+TRUE or FALSE can be converted to 1 or 0s, and thus, a mean can be
+taken. However, the `as.numeric` function cannot be applied to character
+vectors because the character strings cannot be converted into numbers.
+Lastly, the `as.numeric` function converts the factor variables into the
+number assigned to each factor level, and does not actually convey the
+factors (Small, Medium or Large) into numbers, and therefore taking the
+mean here would not be meaningful.
